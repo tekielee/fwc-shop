@@ -1,0 +1,36 @@
+.footer {
+
+    background-color: #e6e6e6;
+
+    padding: 3% 3% 2% 3%;
+
+}
+
+.social-icon {
+
+    font-size: 3rem;
+}
+
+.social-icons-margin {
+
+    margin-top: -17px;
+
+}
+
+.cart-icon {
+
+    font-size: 1.5rem;
+
+}
+
+.cart-count {
+
+    padding-top: 3%;
+
+}
+
+.search-padding {
+
+    padding: 3% 0 3% 0;
+
+}
