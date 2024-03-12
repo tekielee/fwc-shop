@@ -10,6 +10,12 @@
 
 ?>
 
+<script type="text/javascript">
+
+    let ajaxurl = '<?php _e ( admin_url ( 'admin-ajax.php' ) ); ?>';
+           
+</script>
+
 <div class="grid-x">
 
     <div class="large-12 cell">
@@ -112,15 +118,13 @@
 
                         <div class="large-6 cell">
 
-                            <form action="<?php _e ( get_site_url () . '/search', 'foundation-woocommerce' ); ?>" method="POST">
+                            <form action="<?php _e ( get_site_url () . '/search', 'foundation-woocommerce-gutenberg' ); ?>" method="POST">
 
                                 <ul class="menu">
 
                                     <li><input type="text" name="search" placeholder="Search"></li>
 
                                     <li><button type="submit" class="button">Search</button></li>
-
-                                    
 
                                 </ul>
 
@@ -132,15 +136,9 @@
 
                             <ul class="menu">
 
-                                <li><a href="<?php _e ( get_site_url () . '/cart', 'foundation-woocommerce' ); ?>">
-                                    
-                                    <i class="fi-shopping-cart cart-icon"></i></a>
-                                
-                                </li>
-
                                 <li class="cart-count">
                                         
-                                    <?php //_e ( WC()->cart->get_cart_contents_count() ) ?>
+                                   <!-- wp:woocommerce/mini-cart /-->
                                 
                                 </li>
 

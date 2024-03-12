@@ -897,51 +897,56 @@ if ( !function_exists ( 'ajax_post_subscriber_email_handler' ) ) {
 
 }
 
-function get_hubspot_lists ( ) {
+if ( !function_exists ( 'get_hubspot_lists' ) ) {
 
-    $hubspot_acess_token = get_option ( 'hubspot_access_token' );
+    function get_hubspot_lists ( ) {
 
-    $hubspot_private_app_url = 'https://api.hubapi.com/contacts/v1/lists';
-    
-    $args = array (
+        $hubspot_acess_token = get_option ( 'hubspot_access_token' );
 
-        'headers' => array (
+        $hubspot_private_app_url = 'https://api.hubapi.com/contacts/v1/lists';
+        
+        $args = array (
 
-            'Authorization' => "Bearer ${hubspot_acess_token}",
-    
-            'Content-Type' => 'application/json'
+            'headers' => array (
 
-        )
+                'Authorization' => "Bearer ${hubspot_acess_token}",
+        
+                'Content-Type' => 'application/json'
 
-    );
+            )
 
-    $response = wp_remote_get ( $hubspot_private_app_url, $args );
+        );
 
-    if ( $response['response']['code'] === 200 ) {
+        $response = wp_remote_get ( $hubspot_private_app_url, $args );
 
-        $body = json_decode($response['body']);
+        if ( $response['response']['code'] === 200 ) {
 
-        $lists = $body->lists;
+            $body = json_decode($response['body']);
 
-        $select = '<select id="hubspot-lists" name="hubspot-lists">';
+            $lists = $body->lists;
 
-        foreach ( $lists as $list ) {
+            $select = '<select id="hubspot-lists" name="hubspot-lists">';
 
-            $select .= '<option value="' . $list->listId . '">' . $list->name . '</option>';
+            foreach ( $lists as $list ) {
+
+                $select .= '<option value="' . $list->listId . '">' . $list->name . '</option>';
+
+            }
+
+            $select .= '</select>';
+
+            return $select;
+
+        } else {
+
+            return 'There was an error selecting subscriber list. Please try again later';
 
         }
-
-        $select .= '</select>';
-
-        return $select;
-
-    } else {
-
-        return 'There was an error selecting subscriber list. Please try again later';
 
     }
 
 }
+
 
 if ( ! function_exists ( 'getMenu' ) ) {
 
@@ -979,6 +984,16 @@ if ( ! function_exists ( 'getMenu' ) ) {
             return buildMenu ( 0, $menu_items );
 
         }
+
+    }
+
+}
+
+if ( !function_exists ( 'get_wc_cart_count' ) ) {
+
+    function get_wc_cart_count () {
+
+        return WC()->cart->get_cart_contents_count();
 
     }
 

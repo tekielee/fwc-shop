@@ -14,8 +14,6 @@ function ajaxSaveSubsriber ( ajaxurl ) {
 
         let subscriber_email = jQuery('#subscriber').val();
 
-        console.log(subscriber_email);
-
         jQuery.ajax ( {
 
             url: ajaxurl,
