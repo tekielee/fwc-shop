@@ -44,7 +44,7 @@
                                 
                                 <?php 
                                     
-                                    $logo_url = get_template_directory_uri () . '/images/logo.png';
+                                    $logo_url = get_template_directory_uri () . '/assets/images/logo.png';
 
                                     if ( get_option ( 'logo_url' ) ) {
 
