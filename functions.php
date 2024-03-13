@@ -78,6 +78,25 @@ if ( ! function_exists ( 'woocommerce_scripts' ) ) {
 
 }
 
+require get_template_directory() . '/inc/block-patterns.php';
+
+if ( ! function_exists( 'wcg_shop_block_styles' ) ) {
+
+	function wcg_shop_block_styles() {
+
+		register_block_style(
+			'woocommerce/product-title',
+			array(
+				'name'         => 'product-title',
+				'label'        => __( 'Product Title', 'foundation-woocommerce-gutenberg' ),
+                'inline_style' => 'h3.wp-block-post-title a { color: red !important; }',
+			)
+		);
+	}
+ }
+
+add_action( 'init', 'wcg_shop_block_styles' );
+
 if ( !function_exists ( 'search' ) ) {
 
     function search ( $search ) {
@@ -424,7 +443,7 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
             
         ';
 
-        _e ( $accordion );
+        _e ( $accordion, 'foundation-woocommerce-gutenberg' );
 
     }
 
@@ -984,16 +1003,6 @@ if ( ! function_exists ( 'getMenu' ) ) {
             return buildMenu ( 0, $menu_items );
 
         }
-
-    }
-
-}
-
-if ( !function_exists ( 'get_wc_cart_count' ) ) {
-
-    function get_wc_cart_count () {
-
-        return WC()->cart->get_cart_contents_count();
 
     }
 

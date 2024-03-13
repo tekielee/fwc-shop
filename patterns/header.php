@@ -52,7 +52,7 @@
 
                                     }
 
-                                    _e ( $logo_url );
+                                    _e ( $logo_url, 'foundation-woocommerce-gutenberg' );
                                     
                                 ?>" 
                                 
@@ -82,9 +82,9 @@
                                 ?>
                                         <li class="nav-item">
 
-                                            <a class="nav-link" href=" <?php _e ( get_page_link( $page->ID ) ); ?>">
+                                            <a class="nav-link" href=" <?php _e ( get_page_link( $page->ID ), 'foundation-woocommerce-gutenberg' ); ?>">
 
-                                                <?php _e ( $page->post_title ); ?>
+                                                <?php _e ( $page->post_title, 'foundation-woocommerce-gutenberg' ); ?>
 
                                             </a>
 
