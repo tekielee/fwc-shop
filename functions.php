@@ -8,11 +8,11 @@ if ( ! function_exists ( 'foundation_wooocommerce_gutenberg_setup' ) ) {
 
         add_theme_support( 'automatic-feed-links' );
 
-        load_theme_textdomain( 'foundation-woocommerce-gutenberg' );
+        load_theme_textdomain( 'fwc-shop' );
 
         add_theme_support( 'title-tag' );
 
-        register_nav_menu ( 'primary', __( 'Primary', 'foundation-woocommerce-gutenberg' ) );
+        register_nav_menu ( 'primary', __( 'Primary', 'fwc-shop' ) );
 
     }
 
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wcg_shop_block_styles' ) ) {
 			'woocommerce/product-title',
 			array(
 				'name'         => 'product-title',
-				'label'        => __( 'Product Title', 'foundation-woocommerce-gutenberg' ),
+				'label'        => __( 'Product Title', 'fwc-shop' ),
                 'inline_style' => 'h3.wp-block-post-title a { color: red !important; }',
 			)
 		);
@@ -257,9 +257,9 @@ if ( ! function_exists ( 'fwct_menu' ) ) {
 
     	add_menu_page (
 
-    		__( 'Foundation WC Theme', 'foundation-woocommerce-gutenberg' ),
+    		__( 'FWC Shop', 'fwc-shop' ),
 
-    		'Foundation WC Theme',
+    		'FWC Shop',
 
     		'manage_options',
 
@@ -443,7 +443,7 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
             
         ';
 
-        _e ( $accordion, 'foundation-woocommerce-gutenberg' );
+        echo $accordion;
 
     }
 
@@ -528,11 +528,11 @@ if ( ! function_exists ( 'add_specs_meta_box' ) ) {
 
         $content = wp_unslash ( $product->get_meta ( 'specs' ) );
 
-        _e ( '<div class="product_specs">', 'foundation-woocommerce-gutenberg' );
+        echo '<div class="product_specs">';
 
         wp_editor ( $content, 'specs', ['textarea_rows' => 10]);
 
-        _e ( '</div>', 'foundation-woocommerce-gutenberg' );
+        echo '</div>';
 
     }
 
@@ -581,7 +581,7 @@ if ( ! function_exists ( 'display_specs_product_tab_content' ) ) {
 
         global $product;
 
-        _e ( wp_unslash ( $product->get_meta ( 'specs' ) ), 'foundation-woocommerce-gutenberg' );
+        echo wp_unslash ( $product->get_meta ( 'specs' ) );
 
     }
 
@@ -621,11 +621,11 @@ if ( ! function_exists ( 'add_warranty_meta_box' ) ) {
 
         $content = wp_unslash ( $product->get_meta ( 'warranty' ) );
 
-        _e ( '<div class="product_warranty">', 'foundation-woocommerce-gutenberg' );
+        echo '<div class="product_warranty">';
 
         wp_editor ( $content, 'warranty', ['textarea_rows' => 10]);
 
-        _e ( '</div>', 'foundation-woocommerce-gutenberg' );
+        echo '</div>';
 
     }
 
@@ -672,7 +672,7 @@ if ( ! function_exists ( 'display_warranty_product_tab_content' ) ) {
 
         global $product;
 
-        _e ( wp_unslash ( $product->get_meta ( 'warranty' ) ), 'foundation-woocommerce-gutenberg' );
+        echo wp_unslash ( $product->get_meta ( 'warranty' ) );
 
     }
 
@@ -712,11 +712,11 @@ if ( ! function_exists ( 'add_shipping_meta_box' ) ) {
 
         $content = wp_unslash ( $product->get_meta ( 'shipping' ) );
 
-        _e ( '<div class="product_shipping">', 'foundation-woocommerce-gutenberg' );
+        echo '<div class="product_shipping">';
 
         wp_editor ( $content, 'shipping', ['textarea_rows' => 10]);
 
-        _e ( '</div>', 'foundation-woocommerce-gutenberg' );
+        echo '</div>';
     }
 
 }
@@ -761,7 +761,7 @@ if ( ! function_exists ( 'display_shipping_product_tab_content' ) ) {
 
         global $product;
 
-        _e ( wp_unslash ( $product->get_meta ( 'shipping' ) ), 'foundation-woocommerce-gutenberg' );
+        echo wp_unslash ( $product->get_meta ( 'shipping' ) );
 
     }
 }
@@ -792,17 +792,18 @@ if ( ! function_exists ( 'create_product_seller_meta_box' ) ) {
 }
 
 if ( ! function_exists ( 'add_seller_meta_box' ) ) {
+
     function add_seller_meta_box ( $post ) {
 
         $product = wc_get_product ( $post->ID );
 
         $content = wp_unslash ( $product->get_meta ( 'seller' ) );
 
-        _e ( '<div class="product_seller">', 'foundation-woocommerce-gutenberg' );
+        echo '<div class="product_seller">';
 
         wp_editor ( $content, 'seller', ['textarea_rows' => 10]);
 
-        _e ( '</div>', 'foundation-woocommerce-gutenberg' );
+        echo '</div>';
     }
 }
 
@@ -848,13 +849,15 @@ if ( ! function_exists ( 'display_seller_product_tab_content' ) ) {
 
         global $product;
 
-        _e ( wp_unslash ( $product->get_meta ( 'seller' ) ), 'foundation-woocommerce-gutenberg' );
+        echo wp_unslash ( $product->get_meta ( 'seller' ) );
 
     }
 
 }     
 
 add_action( 'wp_ajax_nopriv_subscriber_email', 'ajax_post_subscriber_email_handler' );
+
+add_action( 'wp_ajax_subscriber_email', 'ajax_post_subscriber_email_handler' );
 
 if ( !function_exists ( 'ajax_post_subscriber_email_handler' ) ) {
 

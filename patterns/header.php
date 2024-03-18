@@ -1,18 +1,16 @@
 <?php
 /**
  * Title: Header
- * Slug: foundation-woocommerce-gutenberg/header
- * Categories: foundation-woocommerce-gutenberg
+ * Slug: fwc-shop/header
+ * Categories: fwc-shop
  *
- * @package Foundation WooCommerce Gutenberg
- * @since 1.0.0
  */
 
 ?>
 
 <script type="text/javascript">
 
-    let ajaxurl = '<?php _e ( admin_url ( 'admin-ajax.php' ) ); ?>';
+    let ajaxurl = '<?php echo admin_url ( 'admin-ajax.php' ); ?>';
            
 </script>
 
@@ -38,7 +36,7 @@
                     
                         <span class="site-logo">
                             
-                            <a href="<?php _e ( get_site_url () ); ?>">
+                            <a href="<?php echo get_site_url (); ?>">
 
                                 <img src="
                                 
@@ -52,7 +50,7 @@
 
                                     }
 
-                                    _e ( $logo_url, 'foundation-woocommerce-gutenberg' );
+                                    echo $logo_url;
                                     
                                 ?>" 
                                 
@@ -82,9 +80,9 @@
                                 ?>
                                         <li class="nav-item">
 
-                                            <a class="nav-link" href=" <?php _e ( get_page_link( $page->ID ), 'foundation-woocommerce-gutenberg' ); ?>">
+                                            <a class="nav-link" href=" <?php echo get_page_link( $page->ID ); ?>">
 
-                                                <?php _e ( $page->post_title, 'foundation-woocommerce-gutenberg' ); ?>
+                                                <?php echo $page->post_title; ?>
 
                                             </a>
 
@@ -96,7 +94,7 @@
 
                                 } else {
 
-                                _e ( createMmenu ( getMenu () ) );
+                                echo createMmenu ( getMenu () );
 
                                 }
 
@@ -118,7 +116,7 @@
 
                         <div class="large-6 cell">
 
-                            <form action="<?php _e ( get_site_url () . '/search', 'foundation-woocommerce-gutenberg' ); ?>" method="POST">
+                            <form action="<?php echo get_site_url () . '/search'; ?>" method="POST">
 
                                 <ul class="menu">
 

@@ -1,18 +1,16 @@
 <?php
 /**
  * Title: Search
- * Slug: foundation-woocommerce-gutenberg/search
- * Categories: foundation-woocommerce-gutenberg
+ * Slug: fwc-shop/search
+ * Categories: fwc-shop
  *
- * @package Foundation WooCommerce Gutenberg
- * @since 1.0.0
  */
 
 ?>
 
 <div class="grid-container fluid search-padding">
 
-<!-- wp:query {"queryId":13,"query":{"perPage":9,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"title","author":"","search":" <?php _e ( $_POST['search'], 'foundation-woocommerce-gutenberg' ); ?>","exclude":[],"sticky":"","inherit":false,"__woocommerceAttributes":[],"__woocommerceStockStatus":["instock","outofstock","onbackorder"]},"namespace":"woocommerce/product-query"} -->
+<!-- wp:query {"queryId":13,"query":{"perPage":9,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"title","author":"","search":" <?php echo $_POST['search']; ?>","exclude":[],"sticky":"","inherit":false,"__woocommerceAttributes":[],"__woocommerceStockStatus":["instock","outofstock","onbackorder"]},"namespace":"woocommerce/product-query"} -->
 <div class="wp-block-query"><!-- wp:post-template {"className":"products-block-post-template","layout":{"type":"grid","columnCount":3},"__woocommerceNamespace":"woocommerce/product-query/product-template"} -->
 <!-- wp:woocommerce/product-image {"imageSizing":"thumbnail","isDescendentOfQueryLoop":true} /-->
 

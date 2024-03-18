@@ -1,19 +1,18 @@
 <?php
 /**
- * Foundation WooCommerce Gutenberg: Block Patterns
+ * FWC Shop: Block Patterns
  *
- * @since WC Shop 1.0
  */
 
-function wcg_register_block_patterns() {
+function fwc_register_block_patterns() {
 
 	$block_pattern_categories = array(
 
-		'wcg-shop' => array( 'label' => esc_html__( 'Foundation WooCommerce Shop', 'foundation-woocommerce-gutenberg' ) ),
+		'fwc-shop' => array( 'label' => esc_html__( 'FWC Shop', 'fwc-shop' ) ),
 
 	);
 
-	$block_pattern_categories = apply_filters( 'wcg_register_block_patterns', $block_pattern_categories );
+	$block_pattern_categories = apply_filters( 'fwc_register_block_patterns', $block_pattern_categories );
 
 	foreach ( $block_pattern_categories as $name => $properties ) {
 
@@ -25,4 +24,4 @@ function wcg_register_block_patterns() {
 	}
 }
 
-add_action( 'init', 'wcg_register_block_patterns', 9 );
+add_action( 'init', 'fwc_register_block_patterns', 9 );
