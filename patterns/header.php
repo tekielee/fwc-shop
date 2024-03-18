@@ -36,7 +36,7 @@
                     
                         <span class="site-logo">
                             
-                            <a href="<?php echo get_site_url (); ?>">
+                            <a href="<?php echo esc_url ( home_url () ); ?>">
 
                                 <img src="
                                 
@@ -116,7 +116,7 @@
 
                         <div class="large-6 cell">
 
-                            <form action="<?php echo get_site_url () . '/search'; ?>" method="POST">
+                            <form action="<?php echo esc_url ( home_url () ) . '/search'; ?>" method="POST">
 
                                 <ul class="menu">
 

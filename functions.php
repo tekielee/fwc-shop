@@ -504,7 +504,7 @@ if ( ! function_exists ( 'create_product_specs_meta_box' ) ) {
 
             'custom_product_specs_meta_box',
 
-            __( 'Specification', 'foundation-woocommerce-gutenberg' ),
+            __( 'Specification', 'fwc-shop' ),
 
             'add_specs_meta_box',
 
@@ -561,7 +561,7 @@ if ( ! function_exists ( 'add_specs_product_tab' ) ) {
 
         $tabs ['specs_tab'] = array (
 
-            'title'         => __( 'Specification', 'foundation-woocommerce-gutenberg' ),
+            'title'         => __( 'Specification', 'fwc-shop' ),
 
             'priority'      => 50,
 
@@ -597,7 +597,7 @@ if ( ! function_exists ( 'create_product_warranty_meta_box' ) ) {
 
             'custom_product_warranty_meta_box',
 
-            __( 'Warranty Info', 'foundation-woocommerce-gutenberg' ),
+            __( 'Warranty Info', 'fwc-shop' ),
 
             'add_warranty_meta_box',
 
@@ -653,7 +653,7 @@ if ( ! function_exists ( 'add_warranty_product_tab' ) ) {
 
         $tabs ['warranty_tab'] = array (
 
-            'title'         => __( 'Warranty Info', 'foundation-woocommerce-gutenberg' ),
+            'title'         => __( 'Warranty Info', 'fwc-shop' ),
 
             'priority'      => 50,
 
@@ -688,7 +688,7 @@ if ( ! function_exists ( 'create_product_shipping_meta_box' ) ) {
 
             'custom_product_shipping_meta_box',
 
-            __( 'Shipping Info', 'foundation-woocommerce-gutenberg' ),
+            __( 'Shipping Info', 'fwc-shop' ),
 
             'add_shipping_meta_box',
 
@@ -743,7 +743,7 @@ if ( ! function_exists ( 'add_shipping_product_tab' ) ) {
 
         $tabs ['shipping_tab'] = array (
 
-            'title'         => __( 'Shipping Info', 'foundation-woocommerce-gutenberg' ),
+            'title'         => __( 'Shipping Info', 'fwc-shop' ),
 
             'priority'      => 50,
 
@@ -777,7 +777,7 @@ if ( ! function_exists ( 'create_product_seller_meta_box' ) ) {
 
             'custom_product_seller_meta_box',
 
-            __( 'Seller Profile', 'foundation-woocommerce-gutenberg' ),
+            __( 'Seller Profile', 'fwc-shop' ),
 
             'add_seller_meta_box',
 
@@ -829,7 +829,7 @@ if ( ! function_exists ( 'add_seller_product_tab' ) ) {
 
         $tabs ['seller_tab'] = array (
 
-            'title'         => __( 'Seller Profile', 'foundation-woocommerce-gutenberg' ),
+            'title'         => __( 'Seller Profile', 'fwc-shop' ),
 
             'priority'      => 50,
 
