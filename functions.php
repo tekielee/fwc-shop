@@ -328,34 +328,8 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
                             <a id="img-upload" class="button primary" href="javascript:void(0);">Upload</a>
 
                             <button id="save-logo-url" class="submit success button">Save</button>
-                
-                        </div>
-                
-                    </li>
-            
-                    <li class="accordion-item" data-accordion-item>
-                
-                        <a href="#" class="accordion-title">Footer Settings</a>
 
-                        <div class="accordion-content" data-tab-content>
-
-                            <div class="grid-x">
-
-                                <div class="large-6 cell">
-
-                                    <div id="left-footer-message"></div>
-
-                                    <label>Left Footer</label>
-
-                                    <textarea id="left-footer" name="left-footer" rows="10">' . 
-                                    
-                                        wp_unslash ( get_option ( 'left_footer' ) )
-                                    
-                                    . '</textarea>
-
-                                    <button id="save-left-footer" class="submit success button">Save</button>
-
-                                    <br/><br/>
+                            <br/><br/>
 
                                     <div id="logo-dimensions-message"></div>
 
@@ -413,6 +387,33 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
 
                                     <button id="save-logo-dimensions" class="submit success button">Save</button>
                             
+                
+                        </div>
+                
+                    </li>
+            
+                    <li class="accordion-item" data-accordion-item>
+                
+                        <a href="#" class="accordion-title">Footer Settings</a>
+
+                        <div class="accordion-content" data-tab-content>
+
+                            <div class="grid-x">
+
+                                <div class="large-6 cell">
+
+                                    <div id="left-footer-message"></div>
+
+                                    <label>Left Footer</label>
+
+                                    <textarea id="left-footer" name="left-footer" rows="10">' . 
+                                    
+                                        wp_unslash ( get_option ( 'left_footer' ) )
+                                    
+                                    . '</textarea>
+
+                                    <button id="save-left-footer" class="submit success button">Save</button>
+
                                 </div>
                             
                                 <div class="large-6 cell">
