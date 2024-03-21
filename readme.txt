@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Four Additional WooCommerce Tabs: Specification, Warranty, Shipping Info, and Seller Info. Hubspot subscriber form.
+Multi-level menus. Admin theme options. Four Additional WooCommerce Tabs: Specification, Warranty, Shipping Info, and Seller Info. Hubspot subscriber form.
 
 
 == Installation ==
