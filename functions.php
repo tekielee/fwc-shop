@@ -337,6 +337,60 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
                                     . '</textarea>
 
                                     <button id="save-left-footer" class="submit success button">Save</button>
+
+                                    <br/><br/>
+
+                                    <div class="grid-x grid-margin-x">
+
+                                        <div class="cell small-10">
+
+                                            <label>Log Height</label>
+
+                                            <div class="slider" data-slider data-initial-start="50">
+
+                                                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="logo-height"></span>
+                                                
+                                                <span class="slider-fill" data-slider-fill></span>
+                                            
+                                            </div>
+                                        
+                                        </div>
+
+                                        <div class="cell small-2">
+
+                                            <input type="number" id="logo-height">
+
+                                        </div>
+
+                                    </div>
+
+                                    <br/><br/>
+
+                                    <div class="grid-x grid-margin-x">
+
+                                        <div class="cell small-10">
+
+                                            <label>Log Width</label>
+
+                                            <div class="slider" data-slider data-initial-start="100" data-end="200">
+
+                                                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="logo-width"></span>
+                                                
+                                                <span class="slider-fill" data-slider-fill></span>
+                                            
+                                            </div>
+                                        
+                                        </div>
+
+                                        <div class="cell small-2">
+
+                                            <input type="number" id="logo-width">
+
+                                        </div>
+
+                                    </div>
+
+                                    <button id="save-logo-dimensions" class="submit success button">Save</button>
                             
                                 </div>
                             
