@@ -250,6 +250,23 @@ if ( !function_exists ( 'ajax_logo_url_handler' ) ) {
 
 }
 
+add_action( 'wp_ajax_logo_dimensions', 'ajax_logo_dimensions_handler' );
+
+if ( !function_exists ( 'ajax_logo_dimensions_handler' ) ) {
+
+    function ajax_logo_dimensions_handler () {
+        
+        update_option ( 'logo_width', $_POST['logo_width'] );
+
+        update_option ( 'logo_height', $_POST['logo_height'] );
+
+        echo 'Logo width and height have been updated successfully';
+
+        wp_die();
+    }
+
+}
+
 
 if ( ! function_exists ( 'fwct_menu' ) ) {
 
@@ -340,13 +357,17 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
 
                                     <br/><br/>
 
+                                    <div id="logo-dimensions-message"></div>
+
+                                    <div>Default is 50h x 50w px</div>
+
                                     <div class="grid-x grid-margin-x">
 
                                         <div class="cell small-10">
 
                                             <label>Log Height</label>
 
-                                            <div class="slider" data-slider data-initial-start="50">
+                                            <div class="slider" data-slider data-initial-start="' . wp_unslash ( get_option ( 'logo_height' ) ) . '">
 
                                                 <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="logo-height"></span>
                                                 
@@ -372,7 +393,7 @@ if ( ! function_exists ( 'fwct_menu_page' ) ) {
 
                                             <label>Log Width</label>
 
-                                            <div class="slider" data-slider data-initial-start="100" data-end="200">
+                                            <div class="slider" data-slider data-initial-start="' . wp_unslash ( get_option ( 'logo_width' ) ) . '" data-end="200">
 
                                                 <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="logo-width"></span>
                                                 

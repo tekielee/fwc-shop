@@ -18,7 +18,53 @@ $(document).ready(function() {
 
     ajaxSaveHubspotListID ( ajaxurl );
 
+    ajaxSaveLogoDimensions ( ajaxurl );
+
 });
+
+function ajaxSaveLogoDimensions ( ajaxurl ) {
+
+    $('#save-logo-dimensions').click ( function ( e ) {
+        
+        e.preventDefault();
+
+        let logo_height = jQuery('#logo-height').val();
+
+        let logo_width = jQuery('#logo-width').val();
+
+        jQuery.ajax ( {
+
+            url: ajaxurl,
+
+            type: 'POST',
+
+            data: {
+
+                action: 'logo_dimensions',
+
+                logo_height: logo_height,
+
+                logo_width: logo_width,
+
+            },
+
+            success: function ( response ) {
+
+                let message = '<div class="callout success" data-closable="slide-out-right">' + 
+                
+                    response + '<button class="close-button" aria-label="Dismiss alert" ' + 
+                    
+                    'type="button" data-close><span aria-hidden="true">&times;</span></button></div>';
+
+                jQuery ( '#logo-dimensions-message' ).html( message );
+
+            }
+
+        } );
+
+    } );
+
+}
 
 function ajaxSaveHubspotListID ( ajaxurl ) {
 
