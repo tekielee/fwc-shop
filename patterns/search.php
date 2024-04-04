@@ -5,7 +5,6 @@
  * Categories: fwc-shop
  *
  */
-
 ?>
 
 <div class="grid-container fluid search-padding">
