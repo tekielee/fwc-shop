@@ -122,7 +122,7 @@ if ( ! function_exists ( 'fwc_createMmenu' ) ) {
 
                 $html .= '<ul class="menu">';
 
-                $html .= createMmenu ( $value['children'] );
+                $html .= fwc_createMmenu ( $value['children'] );
 
                 $html .= '</ul>';
 
@@ -1062,7 +1062,7 @@ if ( ! function_exists ( 'fwc_getMenu' ) ) {
 
     		                      'url'      => $menu_item->url,
 
-    		                      'children' => buildMenu ( $menu_item->ID, $menu_items )
+    		                      'children' => fwc_buildMenu ( $menu_item->ID, $menu_items )
 
                               );
 

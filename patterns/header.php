@@ -98,7 +98,7 @@
 
                                 } else {
 
-                                echo fwc_createMmenu ( getMenu () );
+                                echo fwc_createMmenu ( fwc_getMenu () );
 
                                 }
 
